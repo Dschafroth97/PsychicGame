@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+</head>
+<body>
+    <div class="container">
+        <h1>The Psychic Game</h1>
+        <p>Guess what letter I'm thinking of</p>
+        <p id="WinsText"></p>
+        <p id="LossesText"></p>
+        <p id ="GuessesLeft"></p>
+        <p id="Guesses"></p>
+    </div>
+
+    <script type="text/javascript">
+    // creates an array of options for computer
+    var ComputerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+    // Creates variables to hold wins,losses, guesses left and guesses.
+    var wins = 0;
+    var losses = 0;
+    var GuessesLeft = 9;
+    var Guesses = [];
+
+    // Creating variables that hold place in the HTML.
+    var WinsText = document.getElementById("WinsText")
+    var LossesText = document.getElementById("LossesText")
+    var GuessesLeft = document.getElementById("GuessesLeft")
+    var Guesses = document.getElementById("Guesses")
+
+    // Listening for users key press
+    document.onkeyup = function(event){
+        
+        var userGuess = event.key;
+        console.log(userGuess)
+
+    }
+    
+    </script>
+    
+</body>
+</html>
