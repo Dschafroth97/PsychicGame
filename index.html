@@ -10,35 +10,49 @@
     <div class="container">
         <h1>The Psychic Game</h1>
         <p>Guess what letter I'm thinking of</p>
-        <p id="WinsText"></p>
-        <p id="LossesText"></p>
-        <p id ="GuessesLeft"></p>
-        <p id="Guesses"></p>
+        <p id = "WinsText"></p>
+        <p id = "LossesText"></p>
+        <p id = "GuessesLeft"></p>
+        <p id = "GuessesText"></p>
     </div>
 
     <script type="text/javascript">
-    // creates an array of options for computer
-    var ComputerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
-    // Creates variables to hold wins,losses, guesses left and guesses.
+  
+    // Creates variables to hold wins,losses, guesses left, guess and computer choices.
+    var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var wins = 0;
     var losses = 0;
-    var GuessesLeft = 9;
-    var Guesses = [];
-
+    var GuessesLeft = 0;
+    var GuessesText = [];
+        
     // Creating variables that hold place in the HTML.
-    var WinsText = document.getElementById("WinsText")
-    var LossesText = document.getElementById("LossesText")
-    var GuessesLeft = document.getElementById("GuessesLeft")
-    var Guesses = document.getElementById("Guesses")
+    var WinsText = document.getElementById("WinsText");
+    var LossesText = document.getElementById("LossesText");
+    var GuessesLeft = document.getElementById("GuessesLeft");
+    var GuessesText = document.getElementById("GuessesText");
 
+    WinsText.textContent = "wins: " + wins;
+    LossesText.textContent = "losses: " + losses;
+    GuessesLeft.textContent = "Guesses Left: " + GuessesLeft;
+    GuessesText.textContent = "Guesses: " + GuessesText;
+
+    // Randomly chooses a choice from the choices array. This is computer's guess.
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    console.log(computerGuess)
+   
     // Listening for users key press
     document.onkeyup = function(event){
-        
-        var userGuess = event.key;
-        console.log(userGuess)
+       
+        // Determines which key
+        var userGuess = event.key.toLowerCase;
 
-    }
+        if (userGuess === computerGuess) {
+            wins++;
+        } else {
+            
+        }
+
+    };
     
     </script>
     
