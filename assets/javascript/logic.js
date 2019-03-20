@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 // =====================================================================
-var wordOptions = ["glasses","elephant","sandal","portal","extravagant","oculus","zero","diameter","connect","acheive","dedication","perseverance","ace","fair"];
+var wordOptions = ["donovan","eric","stephanie","dustin","matt","onix","jose","charles","trevor","cole","jackson","joshua","jerry","javier","carolyn","sean"];
 var selectedWord = "";
 var lettersInWord = [];
 var numBlanks = 0;
@@ -51,17 +51,18 @@ function checkLetters(letter){
         }
     }
 
-    if(isLetterInWord){
-        for (var i=0;i<numBlanks;i++){
-            if(selectedWord[i] === letter){
-                blanksAndSuccesses[i] = letter;
+    
+        if(isLetterInWord){
+            for (var i=0;i<numBlanks;i++){
+                if(selectedWord[i] === letter && wrongLetters !=  letter){
+                    blanksAndSuccesses[i] = letter;
+                }
             }
         }
-    }
-    else {
+        else{
         wrongLetters.push(letter);
         guessesLeft--;
-    }
+        }
     // console.log(blanksAndSuccesses);
 }
 
