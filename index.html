@@ -10,51 +10,54 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
 </head>
 <body>
+
+    <div class="jumbotron jumbotron-fluid bg-secondary">
+        <div class="container text-center">
+            <h1 class="display-4">HANGMAN GAME</h1>
+            <h4>Students and Instructors in our Cohort!</h2>
+        </div>
+    </div>
     <div class="container">
 
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container text-center">
-                    <h1 class="display-4">HANGMAN GAME</h1>
-                    <p class="lead">Students and Instructors in our Cohort!</p>
-                </div>
+        <div class="card text-center">
+            <div class="card-header">
+                <h5 class="card-title">Word to Guess</h5>
             </div>
+            <div class="card-body">
+                <h2 id="wordToGuess"></h2>
+            </div>
+        </div>
 
-            <div class="card text-center">
-                <div class="card-header">
-                    <h5 class="card-title">Word to Guess</h5>
-                </div>
+        <div class="row">
+            <div class="card col-md-4">
                 <div class="card-body">
-                    <h2 id="wordToGuess"></h2>
+                    <p>WrongGuesses: <span id="wrongGuesses"></span></p>
+                </div>
+            </div>
+                
+            <div class="card col-md-2">
+                <div class="card-body">
+                    <p>Wins: <span id="winCounter"></span></p>
+                </div>
+            </div>
+                        
+            <div class="card col-md-2">
+                <div class="card-body">
+                    <p>Losses: <span id="lossCounter"></span></p>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="card col-md-6">
-                    <div class="card-body">
-                        <p>WrongGuesses: <span id="wrongGuesses"></span></p>
-                    </div>
-                </div>
-                
-                <div class="card col-md-6">
-                    <div class="card-body">
-                        <p>Guesses Left: <span id="numGuesses"></span></p>
-                    </div>
+            <div class="card col-md-4">
+                <div class="card-body">
+                    <p>Guesses Left: <span id="numGuesses"></span></p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="card col-md-6">
-                    <div class="card-body">
-                        <p>Wins: <span id="winCounter"></span></p>
-                    </div>
-                </div>
-                    
-                <div class="card col-md-6">
-                    <div class="card-body">
-                        <p>Losses: <span id="lossCounter"></span></p>
-                    </div>
-                </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card" id="hangman">
             </div>
+        </div>
     </div>
 
     <script src="assets/javascript/logic.js"></script>

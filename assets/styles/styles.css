@@ -5,6 +5,9 @@ html{
 
 body{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
 }
 
 .card{
@@ -12,5 +15,11 @@ body{
 }
 
 .jumbotron{
-    background-color: #11639d
+    display: block;
+    
+}
+
+#hangman{
+    width: 200px;
+    height: 250px;
 }

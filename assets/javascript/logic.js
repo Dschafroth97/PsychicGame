@@ -7,6 +7,7 @@ var numBlanks = 0;
 var blanksAndSuccesses = [];
 var wrongLetters = [];
 
+
 // Game Counters
 var winCount = 0;
 var lossCount = 0;
@@ -60,7 +61,8 @@ function checkLetters(letter){
         }
         else{
             if(wrongLetters.indexOf(letter) === -1) { 
-                wrongLetters.push(letter); guessesLeft--; 
+                wrongLetters.push(letter); 
+                guessesLeft--; 
             }
         }
     // console.log(blanksAndSuccesses);
@@ -81,7 +83,7 @@ function roundComplete(){
     }
     else if(guessesLeft == 0){
         lossCount++;
-        alert("You Lost " + "The Correct answer was: " + selectedWord)
+        alert("You Lost! " + "The Correct answer was: " + selectedWord)
 
         document.getElementById("lossCounter").innerHTML = lossCount;
         startGame();
