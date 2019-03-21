@@ -10,7 +10,7 @@ var wrongLetters = [];
 // Game Counters
 var winCount = 0;
 var lossCount = 0;
-var guessesLeft = 10;
+var guessesLeft = 8;
 
 // FUNCTIONS    
 // =====================================================================
@@ -20,7 +20,7 @@ function startGame(){
     numBlanks = lettersInWord.length;
 
     // reset stats
-    guessesLeft = 10;
+    guessesLeft = 8;
     wrongLetters = [];
     blanksAndSuccesses = [];
 
@@ -50,7 +50,6 @@ function checkLetters(letter){
             isLetterInWord = true;
         }
     }
-
     
         if(isLetterInWord){
             for (var i=0;i<numBlanks;i++){
@@ -60,8 +59,9 @@ function checkLetters(letter){
             }
         }
         else{
-        wrongLetters.push(letter);
-        guessesLeft--;
+            if(wrongLetters.indexOf(letter) === -1) { 
+                wrongLetters.push(letter); guessesLeft--; 
+            }
         }
     // console.log(blanksAndSuccesses);
 }
@@ -74,17 +74,16 @@ function roundComplete(){
 
     if (lettersInWord.toString() == blanksAndSuccesses.toString()){
         winCount++;
-        alert("You Win!")
+        alert("You Win! " + "The answer was: " + selectedWord)
 
         document.getElementById("winCounter").innerHTML = winCount;
         startGame();
     }
     else if(guessesLeft == 0){
         lossCount++;
-        alert("You Lost")
+        alert("You Lost " + "The Correct answer was: " + selectedWord)
 
         document.getElementById("lossCounter").innerHTML = lossCount;
-
         startGame();
     }
 }
