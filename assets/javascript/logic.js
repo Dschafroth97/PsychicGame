@@ -43,6 +43,26 @@ function startGame(){
     // console.log(blanksAndSuccesses);
 }
 
+function imageDisplay(){
+
+    // store images in an array to retrieve later
+    // display appropriate image in reference to guessesLeft variable
+    displayCount = guessesLeft - 1;
+
+    var images = [
+        "assets/images/hangman8.jpg",
+        "assets/images/hangman7.jpg",
+        "assets/images/hangman6.jpg",
+        "assets/images/hangman5.jpg",
+        "assets/images/hangman4.jpg",
+        "assets/images/hangman3.jpg",
+        "assets/images/hangman2.jpg",
+        "assets/images/hangman1.jpg",
+    ];
+    
+    document.getElementById("hangman").src = images[displayCount];
+}
+
 function checkLetters(letter){
     var isLetterInWord = false;
 
@@ -60,7 +80,7 @@ function checkLetters(letter){
             }
         }
         else{
-            if(wrongLetters.indexOf(letter) === -1) { 
+            if(wrongLetters.indexOf(letter) === -1) {
                 wrongLetters.push(letter); 
                 guessesLeft--; 
             }
@@ -93,6 +113,7 @@ function roundComplete(){
 // MAIN PROCESS
 // =====================================================================
 startGame();
+imageDisplay();
 
 // Register keyclicks
 
@@ -100,6 +121,7 @@ document.onkeyup = function(event){
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(letterGuessed);
     roundComplete();
+    imageDisplay();
 
     // console.log(letterGuessed);
 }
